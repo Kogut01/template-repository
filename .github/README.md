@@ -12,7 +12,9 @@ Templatka repozytorium dla projektów, które mają być publicznie dostępne. Z
 
 <div align="center">
 
-### Ustawienia repozytorium
+### ⚙️ Ustawienia repozytorium ⚙️
+
+<br>
 
 </div>
 
