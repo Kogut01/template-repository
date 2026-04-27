@@ -10,6 +10,12 @@ Templatka repozytorium dla projektów, które mają być publicznie dostępne. Z
 
 <br>
 
+<div align="center">
+
+### Ustawienia repozytorium
+
+</div>
+
 ### General -> Pull request
 
 ```
@@ -23,6 +29,8 @@ Templatka repozytorium dla projektów, które mają być publicznie dostępne. Z
 ❌ Allow rebase merging:
 ```
 
+<br>
+
 ### Branches -> Add classic branch protection rule
 
 ```
@@ -32,6 +40,8 @@ Templatka repozytorium dla projektów, które mają być publicznie dostępne. Z
 
 ✅ Require conversation resolution before merging
 ```
+
+<br>
 
 ### Rules
 
@@ -46,6 +56,8 @@ Templatka repozytorium dla projektów, które mają być publicznie dostępne. Z
 
 ✅ Automatically request Copilot code review
 ```
+
+<br>
 
 ### Actions
 
