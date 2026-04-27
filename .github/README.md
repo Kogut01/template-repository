@@ -10,9 +10,48 @@ Templatka repozytorium dla projektów, które mają być publicznie dostępne. Z
 
 <br>
 
-### Tutaj dodajemy nagłówek
+### General -> Pull request
 
-Tutaj opisujemy, co to jest za projekt, jakie ma funkcje i dlaczego warto go używać. Możemy też dodać linki do dokumentacji, demo lub innych zasobów.
+```
+❌ Allow merge commits
+
+✅ Allow squash merging:
+   
+   Default commit message:
+        Pull request title
+
+❌ Allow rebase merging:
+```
+
+### Branches -> Add classic branch protection rule
+
+```
+✅ Branch name pattern: main
+
+✅ Require status checks to pass before merging
+
+✅ Require conversation resolution before merging
+```
+
+### Rules
+
+```
+✅ Ruleset Name: Default Ruleset
+
+✅ Enforcement status: 
+      Active
+
+✅ Target branches:
+      Add target -> Include default branch
+
+✅ Automatically request Copilot code review
+```
+
+### Actions
+
+```
+✅ Allow GitHub Actions to create and approve pull requests
+```
 
 <br>
 
