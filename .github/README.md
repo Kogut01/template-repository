@@ -25,8 +25,7 @@ Templatka repozytorium dla projektów, które mają być publicznie dostępne. Z
 
 ✅ Allow squash merging:
    
-   Default commit message:
-        Pull request title
+      Default commit message -> Pull request title
 
 ❌ Allow rebase merging:
 ```
@@ -36,11 +35,13 @@ Templatka repozytorium dla projektów, które mają być publicznie dostępne. Z
 ### Branches -> Add classic branch protection rule
 
 ```
-✅ Branch name pattern: main
+⚙️ Branch name pattern: main
 
-✅ Require status checks to pass before merging
+⚙️ Protect matching branches:
 
-✅ Require conversation resolution before merging
+      ✅ Require status checks to pass before merging
+
+      ✅ Require conversation resolution before merging
 ```
 
 <br>
@@ -48,15 +49,19 @@ Templatka repozytorium dla projektów, które mają być publicznie dostępne. Z
 ### Rules
 
 ```
-✅ Ruleset Name: Default Ruleset
+⚙️ Ruleset Name: Default Ruleset
 
-✅ Enforcement status: 
-      Active
+⚙️ Enforcement status: 
 
-✅ Target branches:
-      Add target -> Include default branch
+      ✅ Active
 
-✅ Automatically request Copilot code review
+⚙️ Target branches:
+
+      ✅ Add target -> Include default branch
+
+⚙️ Branch rules:
+
+      ✅ Automatically request Copilot code review
 ```
 
 <br>
@@ -64,7 +69,12 @@ Templatka repozytorium dla projektów, które mają być publicznie dostępne. Z
 ### Actions
 
 ```
+⚙️ Workflow permissions:
+
+      ✅ Read and write permissions
+
 ✅ Allow GitHub Actions to create and approve pull requests
+
 ```
 
 <br>
