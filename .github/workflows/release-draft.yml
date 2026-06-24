@@ -1,37 +1,41 @@
-name: Release Drafter
-run-name: >-
-  ${{ 
-    github.event_name == 'pull_request' 
-    && format('Set up Release Draft: PR #{0} -> {1}', github.event.number, github.event.pull_request.title)
-    || 
-    github.event_name == 'push'
-    && format('Update Release Draft: Merge -> {0}', github.event.head_commit.message)
-  }}
+name-template: 'v$RESOLVED_VERSION'
+tag-template: 'v$RESOLVED_VERSION'
+target-branch: main
 
-on:
-    push:
-        branches: [ "main" ]
-    pull_request:
-        types: [opened, synchronize, reopened]
+categories:    
+  - title: '🚀 Features'
+    labels:
+      - 'feature'
+      - 'enhancement'
 
-permissions:
-    contents: read
+  - title: '🐛 Fixes'
+    labels:
+      - 'fix'
+      - 'bugfix'
+      - 'bug'
 
-jobs:
-    release-draft:
-        name: Update Draft
-        runs-on: ubuntu-latest
-        timeout-minutes: 10
+  - title: '🧰 Maintenance'
+    labels: 
+      - 'chore'
+      - 'documentation'
+      - 'dependencies'
 
-        permissions:
-            contents: write
-            pull-requests: write
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+change-title-escapes: '\<*_&'
 
-        steps:
-        - name: 📝 Release -- Update Draft Notes
-          uses: release-drafter/release-drafter@v7
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          with:
-            config-name: config.release-draft.yml
-            commitish: ${{ github.base_ref }}
+version-resolver:
+  patch:
+    labels:
+      - 'release-patch'
+  minor:
+    labels:
+      - 'release-minor'
+  major:
+    labels:
+      - 'release-major'
+  default: minor
+
+template: |
+  ## What’s Changed
+
+  $CHANGES
